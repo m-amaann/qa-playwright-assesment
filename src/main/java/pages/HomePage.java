@@ -3,8 +3,11 @@ package pages;
 import com.microsoft.playwright.Page;
 import utils.BrowserManager;
 
+
 public class HomePage {
+
     public Page page;
+
 
     public HomePage() {
         this.page = BrowserManager.getPage();
@@ -12,10 +15,10 @@ public class HomePage {
 
     public void clickSignUp() {
         System.out.println("Clicking Sign Up button...");
-        smoothPause("Locating Sign Up button...", 1000);
+        smoothPause("Locating Sign Up button...", 2000);
 
         page.locator("#signin2").waitFor();
-        smoothPause("Sign Up button found!", 1000);
+        smoothPause("Sign Up button found!", 2000);
 
         page.click("#signin2");
         smoothPause("Sign Up button clicked!", 2000);
@@ -43,29 +46,26 @@ public class HomePage {
         System.out.println("Laptops category loaded!");
     }
 
+    //
     public void navigateToCart() {
         System.out.println("🛒 Navigating to Cart page...");
         smoothPause("Looking for Cart link in navigation...", 1000);
 
-        // navigation bar to be visible
         page.waitForSelector("#navbarExample", new Page.WaitForSelectorOptions().setTimeout(10000));
         smoothPause("Navigation bar found!", 1000);
 
-        // Wait for cart to be visible
         page.waitForSelector("#cartur", new Page.WaitForSelectorOptions().setTimeout(10000));
         smoothPause("Cart link found!", 1000);
 
-        System.out.println("Clicking Cart link...");
+        System.out.println("Clicking Cart link");
         page.click("#cartur");
-
-        // Wait for cart page to load
         smoothPause("Loading cart page...", 3000);
 
         // Wait for cart content to be visible
         page.waitForSelector("#tbodyid", new Page.WaitForSelectorOptions().setTimeout(10000));
         smoothPause("Cart page loaded successfully!", 1500);
 
-        System.out.println("Cart page opened!");
+        System.out.println("✅ Cart page opened!");
     }
 
     // Keep the old method for backward compatibility
@@ -74,34 +74,34 @@ public class HomePage {
     }
 
     public void clickProduct(String productName) {
-        System.out.println("🔘 Clicking product: " + productName);
+        System.out.println("Clicking product: " + productName);
         smoothPause("Locating product...", 1000);
 
         page.click("a:has-text('" + productName + "')");
         smoothPause("Loading product page...", 3000);
-        System.out.println("✅ Product page loaded: " + productName);
+        System.out.println("Product page loaded: " + productName);
     }
 
     public int getSonyLaptopCount() {
-        System.out.println("🔍 Counting Sony laptops...");
+        System.out.println("Counting Sony laptops...");
         smoothPause("Navigating to laptops...", 1000);
 
         clickLaptopsCategory();
         smoothPause("Searching for Sony products...", 2000);
 
         int count = page.locator("a:has-text('Sony')").count();
-        System.out.println("📱 Found " + count + " Sony laptops");
+        System.out.println("Found " + count + " Sony laptops");
         smoothPause("Count completed!", 1000);
 
         return count;
     }
 
     public boolean isProductVisible(String productName) {
-        System.out.println("👀 Checking if product is visible: " + productName);
+        System.out.println("Checking if product is visible: " + productName);
         smoothPause("Searching for product...", 1000);
 
         boolean isVisible = page.locator("a:has-text('" + productName + "')").isVisible();
-        System.out.println("🔍 Product '" + productName + "' visible: " + isVisible);
+        System.out.println("Product '" + productName + "' visible: " + isVisible);
         smoothPause("Check completed!", 500);
 
         return isVisible;
@@ -109,7 +109,7 @@ public class HomePage {
 
     // Helper method for smooth pauses
     private void smoothPause(String message, int milliseconds) {
-        System.out.println("⏸️ " + message);
+        System.out.println(" " + message);
         page.waitForTimeout(milliseconds);
     }
 }
