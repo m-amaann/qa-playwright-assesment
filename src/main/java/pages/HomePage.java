@@ -26,7 +26,7 @@ public class HomePage {
     }
 
     public void clickLogin() {
-        System.out.println("🔘 Clicking Login button...");
+        System.out.println("Clicking Login button...");
         smoothPause("Locating Login button...", 1000);
 
         page.locator("#login2").waitFor();
@@ -38,7 +38,7 @@ public class HomePage {
     }
 
     public void clickLaptopsCategory() {
-        System.out.println("🔘 Navigating to Laptops category...");
+        System.out.println("Navigating to Laptops category...");
         smoothPause("Looking for Laptops category...", 1000);
 
         page.click("a[onclick=\"byCat('notebook')\"]");
@@ -65,7 +65,7 @@ public class HomePage {
         page.waitForSelector("#tbodyid", new Page.WaitForSelectorOptions().setTimeout(10000));
         smoothPause("Cart page loaded successfully!", 1500);
 
-        System.out.println("✅ Cart page opened!");
+        System.out.println("Cart page opened!");
     }
 
     // Keep the old method for backward compatibility

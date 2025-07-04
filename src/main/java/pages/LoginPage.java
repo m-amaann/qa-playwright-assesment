@@ -52,7 +52,7 @@ public class LoginPage {
         }
 
         smoothPause("Signup process completed!", 2000);
-        System.out.println("🎉 Signup process finished!");
+        System.out.println("Signup process finished!");
     }
 
 
@@ -85,7 +85,7 @@ public class LoginPage {
         // Wait for login to complete
         smoothPause("Processing login...", 5000);
 
-        System.out.println("🎉 Login process completed!");
+        System.out.println("Login process completed!");
     }
 
 
@@ -130,7 +130,7 @@ public class LoginPage {
     }
 
     private void smoothPause(String message, int milliseconds) {
-        System.out.println("⏸️ " + message);
+        System.out.println(message);
         page.waitForTimeout(milliseconds);
     }
 }

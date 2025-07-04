@@ -22,7 +22,7 @@ public class BrowserManager {
         browser.set(browserInstance);
 
         Page pageInstance = browserInstance.newPage();
-        pageInstance.setDefaultTimeout(60000);  // 60 second timeout
+        pageInstance.setDefaultTimeout(60000);
 
         // GLOBAL DIALOG HANDLER - Handles ALL alerts automatically
         pageInstance.onDialog(dialog -> {
@@ -48,7 +48,7 @@ public class BrowserManager {
     }
 
     public static void closeBrowser() {
-        System.out.println("⏳ Closing browser slowly...");
+        System.out.println("Closing browser slowly...");
         if (page.get() != null) {
             page.get().waitForTimeout(2000);
             page.get().close();

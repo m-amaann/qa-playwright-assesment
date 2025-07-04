@@ -45,7 +45,7 @@ public class ProductPage {
 
     // Helper method for smooth pauses
     private void smoothPause(String message, int milliseconds) {
-        System.out.println("⏸️ " + message);
+        System.out.println(message);
         page.waitForTimeout(milliseconds);
     }
 }
