@@ -1,33 +1,66 @@
 # QA Assessment - Playwright Java Framework
 
-## 📋 Test Scenarios Covered
-This project automates the complete e-commerce workflow for https://www.demoblaze.com/
+## Prerequisites
 
-- Sign up with unique user
-- Login with created user
-- Search for Sony laptops
+Before running the tests, ensure you have:
+
+- ☕ Java 17 or higher - Download Java
+- 📦 Maven 3.6 or higher - Download Maven
+- 🌐 Git - Download Git
 - Add Sony products to cart
-- Remove Sony vaio i5 from cart
-- Place order successfully
+- 💻 IDE (IntelliJ IDEA recommended) - Download IntelliJ
 
-## Quick Setup
+## Verify Installation
 
-### Clone and navigate
-git clone <repository-url>
-cd playwright-framework-qa-assessment
+```bash
+# Check Java version
+java -version
 
-### Install dependencies
 
+# Check Maven version  
+mvn -version
+
+
+# Check Git version
+git --version
+```
+
+
+## 📥 Installation
+
+### Step 1: Clone Repository
+
+```bash
+# Clone the project
+
+git clone https://github.com/m-amaann/qa-playwright-assesment.git
+cd qa-playwright-assesment
+```
+
+### Step 2: Install Dependencies
+
+```bash
+
+# Clean and install Maven dependencies
 mvn clean install
+```
 
-### Install Playwright browsers
+### Step 3: Install Playwright Browsers
+
+```bash
+
+# Install Playwright browsers (Chrome, Firefox, Safari)
 mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install"
-
-### Run tests
-
 ```
-mvn test 
+
+### Step 4: Install Playwright Browsers
+
+```bash
+
+# Install Playwright browsers (Chrome, Firefox, Safari)
+mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install"
 ```
+
 
 ## 🧪 Running Tests
 
@@ -35,7 +68,6 @@ mvn test
 # Command Line
 
 mvn test                    # Run all tests
-mvn test -Dtest=ECommerceTest  # Run specific test
 ```
 
 ## Configuration
