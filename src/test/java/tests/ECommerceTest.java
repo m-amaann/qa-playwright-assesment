@@ -86,9 +86,9 @@ public class ECommerceTest extends BaseTest
                 System.out.println(" Place Order button is available");
 
                 cartPage.placeOrder(
-                        "John Doe",
-                        "United States",
-                        "New York",
+                        "Mohamed Amaan",
+                        "Sri Lanka",
+                        "Colombo",
                         TestDataGenerator.getCardNumber(),
                         TestDataGenerator.getCurrentMonth(),
                         TestDataGenerator.getCurrentYear()
