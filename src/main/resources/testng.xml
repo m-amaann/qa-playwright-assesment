@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="DemoblazeQAAssessment">
+    <test name="ECommerceTests">
+        <classes>
+            <class name="tests.ECommerceTest"/>
+        </classes>
+    </test>
+</suite>
